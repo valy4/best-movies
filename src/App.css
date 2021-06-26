@@ -1,38 +1,85 @@
 .App {
+  text-align: justify;
+  background-color: #e5e5e5;
+}
+p {
+  color: #14213d;
+  font-size: 1.3rem;
+}
+.title {
+  background-color: #000814;
+  color: #fca311;
+  font-size: 2rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer {
+  height: 2rem;
+  background-color: #000814;
+  color: #fca311;
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+#outlined-basic {
+  font-size: 1rem;
+  border-radius: 10px;
+  width: 30rem;
+  padding-right: 0.5rem;
+  padding-right: 0.5rem;
+  border-color: #fca311 !important;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
+  clear: both;
+  margin-bottom: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.col {
+  margin-left: 5rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left {
+  /* width: 300px; */
+  float: left;
+}
+.right {
+  float: right;
+  width: 40%;
+}
+.search-section {
+  display: flex;
+  justify-content: center;
+}
+.MuiButton-contained {
+  background-color: #fca311 !important;
+  height: 38px;
+  margin-left: 10px !important;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+img.poster {
+  width: 20%;
+  height: 350px;
+  object-fit: fill;
+}
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.pages {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
