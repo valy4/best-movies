@@ -1,11 +1,11 @@
-Technologies used:
+Technologies used: <br/>
 
--Initialized the project using "create-react-app"
--React.js (useState, useEffect, components)
--Fetched Api: https://www.omdbapi.com/
--CSS
--Material UI for elements as "button", "input field", "pagination"
--Uploaded the project files on my GitHub repository
+-Initialized the project using "create-react-app" <br/>
+-React.js (useState, useEffect, components) <br/>
+-Fetched Api: https://www.omdbapi.com/ <br/>
+-CSS <br/>
+-Material UI for elements as "button", "input field", "pagination" <br/>
+-Uploaded the project files on my GitHub repository <br/>
 
 
 
