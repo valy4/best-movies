@@ -24,7 +24,6 @@ function MainContent() {
         setListFilm(data.Search);
         const temp = Math.ceil(data.totalResults / 10);
         setNrPages(temp);
-        console.log(data);
       });
   }, [currentPage]);
   const pagesList = [];
@@ -41,7 +40,6 @@ function MainContent() {
         setListFilm(data.Search);
         const temp = Math.ceil(data.totalResults / 10);
         setNrPages(temp);
-        // console.log(data);
         const pagesList = [];
         for (let i = 1; i <= nrPages; i++) {
           pagesList.push(i);
