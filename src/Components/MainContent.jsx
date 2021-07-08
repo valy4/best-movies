@@ -85,7 +85,7 @@ function MainContent() {
         })}
       </Box>
       <Box className="pages">
-        {/* <Typography>page: {currentPage}</Typography> */}
+       
         <Pagination count={nrPages} page={currentPage} onChange={handleChange} variant="outlined" shape="rounded" />
       </Box>
 
