@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Box, TextField, Button } from '@material-ui/core';
 import Image from "../assets/images/sorry-image-not-available.png";
 import { Pagination } from '@material-ui/lab';
-// import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 
 
@@ -21,6 +22,7 @@ function MainContent() {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         setListFilm(data.Search);
         const temp = Math.ceil(data.totalResults / 10);
         setNrPages(temp);
@@ -37,6 +39,7 @@ function MainContent() {
       .then((response) => response.json())
 
       .then((data) => {
+
         setListFilm(data.Search);
         const temp = Math.ceil(data.totalResults / 10);
         setNrPages(temp);
@@ -63,29 +66,35 @@ function MainContent() {
           return (
             <Box className="row" style={{ backgroundColor: "#e5e5e5" }}>
               {film.Poster !== "N/A" && (
-                <img
-                  className="col left poster"
+
+                <img className="col left poster"
+
                   src={film.Poster}
                   alt={film.Title}
                 ></img>
-              )}
-              {film.Poster === "N/A" && (
-                <img
-                  className="col left poster"
-                  src={Image}
-                  alt={film.Title}
-                ></img>
-              )}
-              <Box className="col right">
-                <p>{film.Title}</p>
+
+              )
+              }
+              {
+                film.Poster === "N/A" && (
+                  <img
+                    className="col left poster"
+                    src={Image}
+                    alt={film.Title}
+                  ></img>
+                )
+              }
+              < Box className="col right" >
+                <Link style={{ textDecoration: "none" }} to={`/movie/${film.imdbID}`}><Title>{film.Title}</Title></Link>
                 <p>{film.Year}</p>
+                <p>Favorite yes/no</p>
               </Box>
             </Box>
           );
         })}
-      </Box>
+      </Box >
       <Box className="pages">
-       
+
         <Pagination count={nrPages} page={currentPage} onChange={handleChange} variant="outlined" shape="rounded" />
       </Box>
 
@@ -94,4 +103,9 @@ function MainContent() {
 }
 
 export default MainContent;
+const Title = styled.p`
+color:#fca311;
+text-decoration: none;
+&:hover{color:#FBC740}
+  `
 

@@ -82,3 +82,30 @@ img.poster {
   align-items: center;
   font-size: 2rem;
 }
+.btn {
+  border: solid #ffb703 1px;
+  border-radius: 8px;
+  color: #023047;
+  background-color: #ffb703;
+  height: 3rem;
+  width: 10rem;
+  margin-bottom: 2rem;
+  margin-left: 15.5rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #e9c46a;
+}
+.btn1 {
+  border: solid #ffb703 1px;
+  border-radius: 8px;
+  color: #023047;
+  background-color: #ffb703;
+  height: 3rem;
+
+  width: 10rem;
+  cursor: pointer;
+}
+.btn1:hover {
+  background-color: #e9c46a;
+}
