@@ -5,6 +5,7 @@ import './App.css';
 import Box from '@material-ui/core/Box';
 import MoviePage from "./Components/MoviePage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import FavoritePage from "./Components/FavoritePage";
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/movie/:imdbID" >
             <MoviePage />
+          </Route>
+          <Route path='/favorites'>
+            <FavoritePage />
           </Route>
         </Switch>
         <Footer />

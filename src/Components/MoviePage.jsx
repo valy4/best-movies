@@ -8,7 +8,7 @@ import Image from "../assets/images/sorry-image-not-available.png";
 function MoviePage() {
   let { imdbID } = useParams();
   const [favorites, setFavorites] = useState(
-    localStorage.getItem("favorites") ? localStorage.getItem("favorites").split(",") : []
+    localStorage.getItem("favoritesMovies") ? localStorage.getItem("favoritesMovies").split(",") : []
   );
   const [details, setDetails] = useState({});
 
@@ -22,10 +22,10 @@ function MoviePage() {
   }, [imdbID]);
 
   useEffect(() => {
-    localStorage.setItem("favorites", favorites);
+    localStorage.setItem("favoritesMovies", favorites);
   }, [favorites]);
 
-  console.log(favorites);
+
   return (
     <div>
       <div>
@@ -47,14 +47,14 @@ function MoviePage() {
                 Rating <b style={{ color: "#fca311" }}>Not Available</b>
               </p>
             )}
-            {favorites.includes(details.Title) ? (
+            {favorites.includes(details.imdbID) ? (
               <button
-                disabled={!favorites.includes(details.Title)}
+                disabled={!favorites.includes(details.imdbID)}
                 className="btn1"
                 onClick={() => {
                   // filter the ones that are not our favourite
                   const newFavList = favorites.filter(
-                    (fav) => fav !== details.Title
+                    (fav) => fav !== details.imdbID
                   );
 
                   // update state
@@ -65,11 +65,11 @@ function MoviePage() {
               </button>
             ) : (
               <button
-                disabled={favorites.includes(details.Title)}
+                disabled={favorites.includes(details.imdbID)}
                 className="btn1"
                 onClick={() => {
-                  if (!favorites.includes(details.Title)) {
-                    setFavorites([...favorites, details.Title]);
+                  if (!favorites.includes(details.imdbID)) {
+                    setFavorites([...favorites, details.imdbID]);
                   }
                 }}
               >
