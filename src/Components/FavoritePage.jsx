@@ -4,20 +4,31 @@ import Image from "../assets/images/sorry-image-not-available.png";
 
 
 function FavoritePage() {
-  const movies = localStorage.getItem("favoritesMovies") ? localStorage.getItem("favoritesMovies").split(",") : [];
 
-  const [details, setDetails] = useState({});
-  let favMovies = []
+  const [movieList, setMovieList] = useState([]);
+
+  async function fetchAllMovies(){
+    const movieIdList = localStorage.getItem("favoritesMovies") ? localStorage.getItem("favoritesMovies").split(",") : [];
+    console.log(movieIdList, "movieIdList")
+    const movieDataList = await Promise.all(movieIdList.map(id => {
+      return fetch(`https://www.omdbapi.com/?i=${id}&apikey=20b3b01a`)
+      .then((response) => response.json())
+      .then((data) => {
+        // you change var
+        // favMovies.push(data);
+        console.log(data, "data")
+        
+        // console.log(favMovies, "fav movie");
+        return data
+      });
+    }))
+    setMovieList(movieDataList)
+  }
 
   useEffect(() => {
-    for (let id of movies) {
-      fetch(`https://www.omdbapi.com/?i=${id}&apikey=20b3b01a`)
-        .then((response) => response.json())
-        .then((data) => {
-          favMovies.push(data);
-          console.log(favMovies);
-        });
-    }
+    
+    fetchAllMovies()
+    
   }, []);
 
   return (
@@ -32,7 +43,7 @@ function FavoritePage() {
           </div>
         })
       } */}
-      {favMovies?.map(function (film) {
+      {movieList?.map(function (film) {
         return (
           <Box className="row" style={{ backgroundColor: "#e5e5e5" }}>
             {film.Poster !== "N/A" && (
