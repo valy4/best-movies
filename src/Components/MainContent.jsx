@@ -87,7 +87,7 @@ function MainContent() {
               < Box className="col right" >
                 <Link style={{ textDecoration: "none" }} to={`/movie/${film.imdbID}`}><Title>{film.Title}</Title></Link>
                 <p>{film.Year}</p>
-                <p>Favorite yes/no</p>
+
               </Box>
             </Box>
           );

@@ -1,4 +1,4 @@
-import { color } from "@material-ui/system";
+import { Button } from "@material-ui/system";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -8,7 +8,9 @@ import Image from "../assets/images/sorry-image-not-available.png";
 function MoviePage() {
   let { imdbID } = useParams();
   const [favorites, setFavorites] = useState(
-    localStorage.getItem("favoritesMovies") ? localStorage.getItem("favoritesMovies").split(",") : []
+    localStorage.getItem("favoritesMovies")
+      ? localStorage.getItem("favoritesMovies").split(",")
+      : []
   );
   const [details, setDetails] = useState({});
 
@@ -24,7 +26,6 @@ function MoviePage() {
   useEffect(() => {
     localStorage.setItem("favoritesMovies", favorites);
   }, [favorites]);
-
 
   return (
     <div>
@@ -75,6 +76,15 @@ function MoviePage() {
               >
                 Add to favorite
               </button>
+            )}
+            {favorites.includes(details.imdbID) ? (
+              <p>
+                Favorite: <span style={{ color: "blue" }}><b>Yes</b></span>
+              </p>
+            ) : (
+              <p>
+                Favorite: <span style={{ color: "blue" }}><b>No</b></span>
+              </p>
             )}
 
             {details.Plot !== "N/A" && <Plot>{details.Plot}</Plot>}
