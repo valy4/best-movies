@@ -115,17 +115,36 @@ const Text = styled.div`
   flex-direction: column;
   margin-left: 5rem;
   width: 40rem;
+   @media only screen and (max-width: 480px) {
+     width: 15rem;
+   }
 `;
 const Title = styled.p`
   font-size: 2rem;
   color: #fca311;
+   @media only screen and (max-width: 480px) {
+     font-size: 1.7rem;
+     text-align: start;
+   }
+
 `;
 const Plot = styled.p`
   align-content: flex-end;
+   @media only screen and (max-width: 480px) {
+     font-size: 1rem;
+     text-align: start;
+     width: 15rem;
+   }
 `;
 const Poster = styled.img`
   width: 23%;
   height: 350px;
   object-fit: fill;
   margin-top: 2rem;
+   @media only screen and (max-width: 480px) {
+      width: 35%;
+  height: 200px;
+  object-fit: fill;
+  margin-top: 2rem;
+   }
 `;

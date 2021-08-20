@@ -113,3 +113,40 @@ img.poster {
 .btn1:hover {
   background-color: #e9c46a;
 }
+@media only screen and (max-width: 480px) {
+  img.poster {
+    width: 90px;
+    height: 120px;
+    object-fit: fill;
+  }
+  .title {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+  }
+  .box {
+    margin-left: 2rem;
+  }
+  .row {
+    width: 6rem;
+  }
+  .btn {
+    height: 1.5rem;
+    width: 6rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+  .btn1 {
+    font-size: 1rem;
+  }
+  img.poster {
+    width: 20%;
+    height: 250px;
+    object-fit: fill;
+  }
+}

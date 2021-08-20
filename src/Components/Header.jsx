@@ -27,5 +27,8 @@ align-self:center;
   background-color: #fca311;
 
 }
+@media only screen and (max-width: 480px) {
+  font-size: 1rem;
+}
 
 `

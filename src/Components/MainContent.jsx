@@ -49,6 +49,7 @@ function MainContent() {
         }
       });
   }
+  console.log(pagesList)
 
   return (
     <Box>
@@ -106,6 +107,15 @@ export default MainContent;
 const Title = styled.p`
 color:#fca311;
 text-decoration: none;
-&:hover{color:#FBC740}
+&:hover{color:#FBC740};
+ @media only screen and (max-width: 480px) {
+font-size: 1rem;
+text-align: justify;
+width: 15rem;
+}
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+
+}
   `
+
 

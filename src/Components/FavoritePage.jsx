@@ -66,6 +66,10 @@ function FavoritePage() {
 export default FavoritePage;
 const FavPage = styled.div`
 height: 100%;
+@media only screen and (max-width: 480px) {
+height: 100%;
+margin-left: 2rem;
+}
 
 
 
@@ -73,5 +77,9 @@ height: 100%;
 const Title = styled.p`
 color:#fca311;
 text-decoration: none;
-
+ @media only screen and (max-width: 480px) {
+   font-size: 1.2rem;
+   text-align: justify;
+width: 12rem;
+ }
   `
