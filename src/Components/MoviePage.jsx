@@ -109,6 +109,10 @@ const ContainerPage = styled.div`
   margin: 5rem;
   color: #000814;
   height: 60vh;
+   @media only screen and (max-width: 480px) {
+     margin-left: 3rem;
+     margin-right:3rem;
+   }
 `;
 const Text = styled.div`
   display: flex;
@@ -117,6 +121,7 @@ const Text = styled.div`
   width: 40rem;
    @media only screen and (max-width: 480px) {
      width: 15rem;
+     margin-left:2rem
    }
 `;
 const Title = styled.p`

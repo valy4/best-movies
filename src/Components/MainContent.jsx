@@ -112,6 +112,8 @@ text-decoration: none;
 font-size: 1rem;
 text-align: justify;
 width: 15rem;
+
+
 }
 @media only screen and (max-width: 768px) and (min-width: 481px) {
 
